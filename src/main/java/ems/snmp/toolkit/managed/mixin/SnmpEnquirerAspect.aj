@@ -33,7 +33,7 @@ import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.*;
-
+import java.util.Map.Entry;
 /**
  * Created by IntelliJ IDEA.
  * User: thebaz
@@ -538,7 +538,7 @@ privileged aspect SnmpEnquirerAspect {
         }
     }
 
-    private Object SnmpEnquirer.createValueObject(Class returnType, Map.Entry<String, List<VariableBinding>> entry) throws Exception {
+    private Object SnmpEnquirer.createValueObject(Class returnType, Entry<String, List<VariableBinding>> entry) throws Exception {
         Object object = returnType.getComponentType().newInstance();
         Map<String, PropertyDescriptor> descriptorMap = analyzeBean(object);
         for (int j = 0; j < entry.getValue().size(); j++) {
