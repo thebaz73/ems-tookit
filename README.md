@@ -32,8 +32,8 @@ public class MonitorSample implements SnmpConfiguration {
 }
 ```
 The Object is a simple POJO. Two 'special' thing define the ojbect:
-1. The **@Monitor** annotation which is a simple mark-up annotation defined into the toolkit.
-2. The SnmpConfiguration interface which is a [mixin](http://en.wikipedia.org/wiki/Mixin) and adds to the **MonitorSamle** object some utility methods the retrieve SNMP and device configuration parameters (for example ip address or SNMP read community).
+ * The **@Monitor** annotation which is a simple mark-up annotation defined into the toolkit.
+ * The SnmpConfiguration interface which is a [mixin](http://en.wikipedia.org/wiki/Mixin) and adds to the **MonitorSamle** object some utility methods the retrieve SNMP and device configuration parameters (for example ip address or SNMP read community).
 
 All the work is executed into the **printValues** method. When the following code is executed the magic begins:
 
@@ -86,10 +86,10 @@ public class IfMib implements ConfigurationAware, SnmpEnquirer {
 ```
 
 Again let's describe the **IfMib** object. First of all it is marked by the **@ManagedObject** annotation and implements **ConfigurationAware** and **SnmpEnquirer** interfaces.
-1. **@ManagedObject** is a simple mark-up annotation defined into the toolkit.
-2. **ConfigurationAware** and **SnmpEnquirer** are [mixin](http://en.wikipedia.org/wiki/Mixin)s to which and AOP Aspect add all SNMP functionalities.
-3. **@OidProperty** annotation that mark **public Integer getIfNumber()** method identifies the AOP [pointcut](http://eclipse.org/aspectj/doc/released/progguide/language-joinPoints.html).
-4. Method **private void setIfNumber(Integer ifNumber)** can be accessed only by the "SNMP capable" Aspect because is private. Moreover it is private and it is not annotated because the ifNumber SNMP OId is read-only.
+ * **@ManagedObject** is a simple mark-up annotation defined into the toolkit.
+ * **ConfigurationAware** and **SnmpEnquirer** are [mixin](http://en.wikipedia.org/wiki/Mixin)s to which and AOP Aspect add all SNMP functionalities.
+ * **@OidProperty** annotation that mark **public Integer getIfNumber()** method identifies the AOP [pointcut](http://eclipse.org/aspectj/doc/released/progguide/language-joinPoints.html).
+ * Method **private void setIfNumber(Integer ifNumber)** can be accessed only by the "SNMP capable" Aspect because is private. Moreover it is private and it is not annotated because the ifNumber SNMP OId is read-only.
 
 ### Technologies
  * Maven
