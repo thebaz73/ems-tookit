@@ -1,0 +1,6 @@
+<aspectj>
+    <aspects>
+        <aspect name="ems.snmp.toolkit.monitor.aspect.ConfigurationAwareMonitorAspect"/>
+        <aspect name="ems.snmp.toolkit.managed.aspect.ManagedObjectAspect"/>
+    </aspects>
+</aspectj>
