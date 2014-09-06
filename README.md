@@ -101,3 +101,5 @@ Again let's describe the **IfMib** object. First of all it is marked by the **@M
 Clone project and compile. Check out for samples in test folder. For a full satisfying experience check out also following projects:
  * SMI Parser: https://github.com/thebaz73/smiparser
  * EMS MIB Compiler: https://github.com/thebaz73/ems-compiler
+
+**NOTE: Compiles with Java6**
